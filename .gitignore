@@ -29,7 +29,7 @@ hs_err_pid*
 .project
 
 # H2-Database
-*.mv.db
+*.db
 
 #Mail-Properties
 mail-template.properties
