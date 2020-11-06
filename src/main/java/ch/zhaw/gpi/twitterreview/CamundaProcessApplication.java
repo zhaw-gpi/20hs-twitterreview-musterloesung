@@ -1,16 +1,10 @@
 package ch.zhaw.gpi.twitterreview;
 
-import java.lang.reflect.Method;
 
 import org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import ch.zhaw.gpi.twitterreview.ldap.LdapService;
-import ch.zhaw.gpi.twitterreview.ldap.User;
-import ch.zhaw.gpi.twitterreview.ldap.UserRepository;
 
 /**
  * Hauptklasse für die Prozessapplikation, welche diese mit allen Abhängigkeiten
