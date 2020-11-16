@@ -29,6 +29,7 @@ public class GetUserInformationDelegate implements JavaDelegate {
         if(response.getStatusCode().equals(HttpStatus.OK)){
             JSONObject userAJsonObject = new JSONObject(response.getBody());
             fullName = userAJsonObject.getString("firstName") + " " + userAJsonObject.getString("officialName");
+            execution.setVariable("email", userAJsonObject.getString("email"));
         } else {
             fullName = "Mr. X";
         }
