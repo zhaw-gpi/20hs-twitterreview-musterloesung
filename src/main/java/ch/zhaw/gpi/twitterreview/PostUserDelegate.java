@@ -8,9 +8,7 @@ import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @Named("postUserAdapter")
@@ -32,10 +30,10 @@ public class PostUserDelegate implements JavaDelegate {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<String> response = restTemplate.exchange("http://localhost:8070/api/users", HttpMethod.POST, httpEntity, String.class);
-
-        if(response.getStatusCode().equals(HttpStatus.CREATED)){
-            System.out.println("It worked");
+        try {
+            restTemplate.exchange("http://localhost:8070/api/users", HttpMethod.POST, httpEntity, String.class);
+        } catch (Exception e) {
+            throw e;
         }
 
     }

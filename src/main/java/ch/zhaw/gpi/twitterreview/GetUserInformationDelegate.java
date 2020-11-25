@@ -6,7 +6,6 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.json.JSONObject;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,15 +21,15 @@ public class GetUserInformationDelegate implements JavaDelegate {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<String> response = restTemplate.exchange("http://localhost:8070/api/users/{userName}", HttpMethod.GET, null, String.class, userName);
-
         String fullName;
 
-        if(response.getStatusCode().equals(HttpStatus.OK)){
+        try {
+            ResponseEntity<String> response = restTemplate.exchange("http://localhost:8070/api/users/{userName}", HttpMethod.GET, null, String.class, userName);
+
             JSONObject userAJsonObject = new JSONObject(response.getBody());
             fullName = userAJsonObject.getString("firstName") + " " + userAJsonObject.getString("officialName");
             execution.setVariable("email", userAJsonObject.getString("email"));
-        } else {
+        } catch (Exception e) {
             fullName = "Mr. X";
         }
 
