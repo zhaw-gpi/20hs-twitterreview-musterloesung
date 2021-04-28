@@ -8,13 +8,13 @@
   <groupId>ch.zhaw.gpi</groupId>  
   <artifactId>twitterreview</artifactId>  
   <name>Twitter Review</name>  
-  <version>1.0.0</version>  
+  <version>2.0.0</version>  
 
   <!-- Spring Boot als Parent POM -->
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.2.5.RELEASE</version>
+    <version>2.4.5</version>
     <relativePath/>
   </parent>
   
@@ -24,7 +24,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
     <!-- Setzt die (Camunda) Spring Boot-Starter-Version -->  
-    <camunda-bpm-spring-boot-starter.version>7.13.0</camunda-bpm-spring-boot-starter.version>
+    <camunda-bpm-spring-boot-starter.version>7.15.0</camunda-bpm-spring-boot-starter.version>
     <!-- Steuert, ob die Enterprise-Version von Camunda benutzt wird ("-ee" schreiben)
              oder die Community-Version (leer lassen). Weitere Bedingungen:
              1. Eine Datei license.txt mit einem gültigen Key muss im Benutzerverzeichnis/.camunda sein
@@ -81,12 +81,12 @@
     <dependency> 
       <groupId>com.sun.xml.bind</groupId>  
       <artifactId>jaxb-impl</artifactId>  
-      <version>2.2.3</version> 
+      <version>3.0.1</version> 
     </dependency> 
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20200518</version>
+      <version>20070829</version>
     </dependency>
 
     <dependency>
@@ -105,13 +105,13 @@
     <dependency>
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-core</artifactId>
-      <version>1.9.0</version>
+      <version>1.10.1</version>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.spin</groupId>
       <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
-      <version>1.9.0</version>
+      <version>1.10.1</version>
     </dependency>
 
     <dependency>
